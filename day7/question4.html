@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #box {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 90px repeat(3, 150px);
+    gap: 25px 20px;
+    margin: auto;
+    grid-template-areas:
+      "a a a a"
+      "b b b c"
+      "b b b d"
+      "b b b e";
+  }
+
+  #box>div {
+    border: 1px solid none;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
+  }
+
+  #box>div:nth-child(1) {
+    grid-area: a;
+    background-color: yellow;
+    font-size: 50px;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  #box>div:nth-child(2) {
+    grid-area: b;
+    background-color: red;
+    width: 95%;
+  }
+
+  #box>div:nth-child(3) {
+    grid-area: c;
+    background-color: rgb(86, 236, 86);
+    width: 100%;
+
+  }
+
+  #box>div:nth-child(4) {
+    grid-area: d;
+    margin-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    background-color: rgb(66, 243, 66);
+  }
+
+  #box>div:nth-child(5) {
+    grid-area: e;
+    margin-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    background-color: rgb(60, 245, 60);
+  }
+
+  @media all and (min-width:580px) and (max-width:820px) {
+    #box {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 80px 300px 150px;
+      grid-template-areas:
+        "a a a"
+        "b b b"
+        "c d e";
+    }
+
+    #box>div:nth-child(1) {
+      width: 95%;
+      margin-left: -5px;
+    }
+
+    #box>div:nth-child(4) {
+      grid-area: d;
+      width: 90%;
+      margin-left: -5px;
+
+    }
+
+    #box>div:nth-child(5) {
+      grid-area: e;
+      width: 90%;
+      /* padding-left: -4px; */
+      margin-left: -5px;
+    }
+
+    #box>div:nth-child(3) {
+      grid-area: c;
+      width: 90%;
+    }
+
+
+  }
+
+  @media all and (min-width:280px) and (max-width:579px) {
+    #box {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 80px 300px repeat(3, 200px);
+      grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e";
+    }
+
+    #box>div:nth-child(1) {
+      width: 95%;
+    }
+
+    #box>div:nth-child(2) {
+      width: 95%;
+    }
+
+    #box>div:nth-child(3) {
+
+      width: 95%;
+
+    }
+
+    #box>div:nth-child(4) {
+
+      width: 95%;
+
+    }
+
+    #box>div:nth-child(5) {
+
+      width: 95%;
+
+    }
+
+  }
+</style>
+
+<body>
+  <div id="box">
+    <div>Navigation</div>
+    <div>LEFT BOX</div>
+    <div>RIGHT BOX1</div>
+    <div>RIGHT BOX1</div>
+    <div>RIGHT BOX1</div>
+  </div>
+</body>
+
+</html>
